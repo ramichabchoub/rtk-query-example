@@ -4,10 +4,10 @@ import { faker } from '@faker-js/faker'
 
 export const addUser = createAsyncThunk('users/addUser', async () => {
   const response = await axios.post('http://localhost:3333/users', {
-    name: faker.word.words(),
+    name: faker.person.fullName(),
   })
 
-  await pause(10000)
+  await pause(1000)
   return response.data
 })
 

@@ -21,7 +21,21 @@ const albumsApi = createApi({
         keepUnusedDataFor: 5 * 60 * 1000,
         // use pause method to pause fetching for 1 seconds
         transformResponse: async (response) => {
-          return await pause(1000).then(() => response)
+          await pause(3000)
+          return response
+        },
+      }),
+      addAlbum: builder.mutation({
+        query: (data) => {
+          console.log('data', data)
+          return {
+            url: '/albums',
+            method: 'POST',
+            body: {
+              title: data.title,
+              userId: data.userId,
+            },
+          }
         },
       }),
     }
@@ -30,5 +44,5 @@ const albumsApi = createApi({
 // console.log(albumsApi)
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-export const { useFetchAlbumsQuery } = albumsApi
+export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi
 export { albumsApi }

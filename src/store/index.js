@@ -14,7 +14,10 @@
 // ---- createApi ----
 // states:
 // albums list:     Array of objects {id, title, userId}
-// photos list:     Array of objects {id, title}
+
+// queries:
+// fetchAlbums
+// addAlbum
 
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
@@ -41,4 +44,4 @@ export * from './thunks/addUser'
 export * from './thunks/removeUser'
 export * from './thunks/fetchAlbums'
 
-export { useFetchAlbumsQuery } from './apis/albumsApi'
+export { useFetchAlbumsQuery, useAddAlbumMutation } from './apis/albumsApi'
