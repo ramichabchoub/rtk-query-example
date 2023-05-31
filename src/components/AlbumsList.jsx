@@ -1,18 +1,12 @@
-import { GoTrashcan } from 'react-icons/go'
 import { faker } from '@faker-js/faker'
-import {
-  useFetchAlbumsQuery,
-  useAddAlbumMutation,
-  useRemoveAlbumMutation,
-} from '../store'
+import { useFetchAlbumsQuery, useAddAlbumMutation } from '../store'
 import Skeleton from './Skeleton'
-import ExpendadblePanel from './ExpendadblePanel'
 import Button from './Button'
+import AlbumListItem from './albumListItem'
 
 export default function AlbumsList({ user }) {
   const { data: albums, isLoading, error } = useFetchAlbumsQuery(user)
   const [addAlbum, addAlbumResults] = useAddAlbumMutation()
-  const [removeAlbum, removeAlbumResults] = useRemoveAlbumMutation()
 
   const handleAddAlbum = () => {
     addAlbum({
@@ -21,35 +15,15 @@ export default function AlbumsList({ user }) {
     })
   }
 
-  const handleRemoveAlbum = (album) => {
-    removeAlbum(album)
-  }
-
   let content
   if (isLoading) {
     content = <Skeleton times={3} className="h-10 w-full" />
   } else if (error) {
     content = <div>Error fetching albums: {JSON.stringify(error, null, 2)}</div>
   } else {
-    content = albums.map((album) => {
-      const header = (
-        <>
-          <Button
-            isRemoving={removeAlbumResults.isLoading}
-            onClick={() => handleRemoveAlbum(album)}
-            className="mr-2"
-          >
-            <GoTrashcan />
-          </Button>
-          {album.title}
-        </>
-      )
-      return (
-        <ExpendadblePanel key={album.id} header={header}>
-          List of photos in the album
-        </ExpendadblePanel>
-      )
-    })
+    content = albums.map((album) => (
+      <AlbumListItem key={album.id} album={album} />
+    ))
   }
 
   // console.log(useFetchAlbumsQuery(user))
