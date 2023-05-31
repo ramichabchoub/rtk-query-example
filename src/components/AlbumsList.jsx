@@ -34,10 +34,14 @@ export default function AlbumsList({ user }) {
   // console.log(useFetchAlbumsQuery(user))
   return (
     <div>
-      <div>
-        <pre>{JSON.stringify(user, null, 2)}</pre>
-        Albums for {user.name}
-        <Button onClick={handleAddAlbum}>+ Add Album</Button>
+      <div className="m-2 flex flex-row items-center justify-between">
+        {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
+        <h3 className="text-lg font-bold">
+          Albums for <span className="text-red-500">"{user.name}"</span>
+        </h3>
+        <Button loading={results.isLoading} onClick={handleAddAlbum}>
+          + Add Album
+        </Button>
       </div>
       <div>{content}</div>
     </div>
