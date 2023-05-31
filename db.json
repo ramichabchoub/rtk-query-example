@@ -13,6 +13,22 @@
       "id": 31
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": 1,
+      "title": "AZERTY",
+      "userId": 24
+    },
+    {
+      "id": 1,
+      "title": "111",
+      "userId": 24
+    },
+    {
+      "id": 2,
+      "title": "QWERTY",
+      "userId": 29
+    }
+  ],
   "photos": []
 }

@@ -33,6 +33,11 @@ const usersSlice = createSlice({
   //     state.error = action.error
   //   },
   // },
+  // extraReducers: (builder) => {
+  //   builder.addCase(fetchUsers.pending, (state) => {
+  //     state.isLoading = true
+  //   })
+  // }
   extraReducers(builder) {
     // fetch users
     builder.addCase(fetchUsers.pending, (state) => {
