@@ -17,12 +17,18 @@ const albumsApi = createApi({
             method: 'GET',
           }
         },
+        // cache for 5 minutes
+        keepUnusedDataFor: 5 * 60 * 1000,
+        // use pause method to pause fetching for 1 seconds
+        transformResponse: async (response) => {
+          return await pause(1000).then(() => response)
+        },
       }),
     }
   },
 })
-
-console.log(albumsApi)
+// console.log(albumsApi)
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const { useFetchAlbumsQuery } = albumsApi
 export { albumsApi }

@@ -30,7 +30,6 @@ export default function UsersListItem({ user }) {
 
   return (
     <ExpendadblePanel header={header}>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
       <AlbumsList user={user} />
     </ExpendadblePanel>
   )

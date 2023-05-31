@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { fetchUsers, addUser } from '../store'
 import useThunk from '../hooks/use-thunk'
 import Skeleton from './Skeleton'
@@ -10,7 +10,6 @@ export default function UsersList() {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
   const [doAddUser, isAddingUser, addingUserError] = useThunk(addUser)
 
-  const dispatch = useDispatch()
   const { usersList } = useSelector((state) => state.users)
 
   useEffect(() => {

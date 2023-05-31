@@ -19,21 +19,26 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { usersReducer } from './slices/usersSlice'
+// import { albumsReducer } from './slices/albumSlice'
 import { albumsApi } from './apis/albumsApi'
 
 export const store = configureStore({
   reducer: {
     users: usersReducer,
+    // albums: albumsReducer,
     [albumsApi.reducerPath]: albumsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(albumsApi.middleware),
 })
 
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
 setupListeners(store.dispatch)
 
 export * from './thunks/fetchUsers'
 export * from './thunks/addUser'
 export * from './thunks/removeUser'
+export * from './thunks/fetchAlbums'
 
 export { useFetchAlbumsQuery } from './apis/albumsApi'
