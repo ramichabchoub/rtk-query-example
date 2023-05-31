@@ -6,7 +6,7 @@ import ExpendadblePanel from './ExpendadblePanel'
 export default function AlbumListItem({ album }) {
   const [removeAlbum, removeAlbumResults] = useRemoveAlbumMutation()
 
-  const handleRemoveAlbum = (album) => {
+  const handleRemoveAlbum = () => {
     removeAlbum(album)
   }
 
@@ -14,7 +14,7 @@ export default function AlbumListItem({ album }) {
     <>
       <Button
         isRemoving={removeAlbumResults.isLoading}
-        onClick={() => handleRemoveAlbum(album)}
+        onClick={handleRemoveAlbum}
         className="mr-2"
       >
         <GoTrashcan />
