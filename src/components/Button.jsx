@@ -11,7 +11,7 @@ function Button({
   outline,
   rounded,
   loading,
-  isRemovingUser,
+  isRemoving,
   ...rest
 }) {
   const classes = className(
@@ -38,7 +38,7 @@ function Button({
     <button disabled={loading} {...rest} className={classes}>
       {loading ? (
         <GoSync className="animate-spin" />
-      ) : isRemovingUser ? (
+      ) : isRemoving ? (
         <GoTrashcan className="animate-spin" />
       ) : (
         children

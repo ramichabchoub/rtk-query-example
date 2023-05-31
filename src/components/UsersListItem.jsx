@@ -15,7 +15,7 @@ export default function UsersListItem({ user }) {
   const header = (
     <>
       <Button
-        isRemovingUser={isRemovingUser}
+        isRemoving={isRemovingUser}
         onClick={handleRemoveUser}
         className="mr-2"
       >
