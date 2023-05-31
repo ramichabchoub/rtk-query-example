@@ -24,15 +24,19 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import { usersReducer } from './slices/usersSlice'
 // import { albumsReducer } from './slices/albumSlice'
 import { albumsApi } from './apis/albumsApi'
+import { photosApi } from './apis/photosApi'
 
 export const store = configureStore({
   reducer: {
     users: usersReducer,
     // albums: albumsReducer,
     [albumsApi.reducerPath]: albumsApi.reducer,
+    [photosApi.reducerPath]: photosApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(albumsApi.middleware),
+    getDefaultMiddleware()
+      .concat(albumsApi.middleware)
+      .concat(photosApi.middleware),
 })
 
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -49,3 +53,8 @@ export {
   useAddAlbumMutation,
   useRemoveAlbumMutation,
 } from './apis/albumsApi'
+export {
+  useFetchPhotosQuery,
+  useAddPhotoMutation,
+  useRemovePhotoMutation,
+} from './apis/photosApi'

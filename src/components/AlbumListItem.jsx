@@ -2,6 +2,7 @@ import { GoTrashcan } from 'react-icons/go'
 import { useRemoveAlbumMutation } from '../store'
 import Button from './Button'
 import ExpendadblePanel from './ExpendadblePanel'
+import PhotosList from './PhotosList'
 
 export default function AlbumListItem({ album }) {
   const [removeAlbum, removeAlbumResults] = useRemoveAlbumMutation()
@@ -24,7 +25,7 @@ export default function AlbumListItem({ album }) {
   )
   return (
     <ExpendadblePanel key={album.id} header={header}>
-      List of photos in the album
+      <PhotosList album={album} />
     </ExpendadblePanel>
   )
 }

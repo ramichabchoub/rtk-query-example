@@ -29,10 +29,91 @@
       "userId": 24
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "QWERTY",
       "userId": 29
+    },
+    {
+      "title": "Incredible Steel Bike",
+      "userId": 24,
+      "id": 3
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "id": 2,
+      "albumId": 2,
+      "url": "https://via.placeholder.com/600/771796"
+    },
+    {
+      "albumId": 1,
+      "url": "https://picsum.photos/seed/MnvIy/500/500",
+      "id": 18
+    },
+    {
+      "albumId": 1,
+      "url": "https://loremflickr.com/500/500?lock=4113409849163776",
+      "id": 20
+    },
+    {
+      "albumId": 1,
+      "url": "https://loremflickr.com/500/500?lock=1349705103572992",
+      "id": 26
+    },
+    {
+      "albumId": 2,
+      "url": "https://loremflickr.com/500/500?lock=2179711356633088",
+      "id": 28
+    },
+    {
+      "albumId": 2,
+      "url": "https://picsum.photos/seed/NiI4f/500/500",
+      "id": 29
+    },
+    {
+      "albumId": 2,
+      "url": "https://picsum.photos/seed/kynclCg/500/500",
+      "id": 30
+    },
+    {
+      "albumId": 2,
+      "url": "https://picsum.photos/seed/a79Nz/500/500",
+      "id": 33
+    },
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/yDBme/500/500",
+      "id": 34
+    },
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/Ro3812avu/500/500",
+      "id": 35
+    },
+    {
+      "albumId": 3,
+      "url": "https://loremflickr.com/500/500?lock=8092052665401344",
+      "id": 36
+    },
+    {
+      "albumId": 3,
+      "url": "https://loremflickr.com/500/500?lock=3937674530390016",
+      "id": 37
+    },
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/4jUTSvIWI/500/500",
+      "id": 39
+    },
+    {
+      "albumId": 2,
+      "url": "https://picsum.photos/seed/q4F60/500/500",
+      "id": 40
+    },
+    {
+      "albumId": 3,
+      "url": "https://picsum.photos/seed/hv8mfp60HG/500/500",
+      "id": 41
+    }
+  ]
 }
